@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+[class*="el"]{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+
+    transition: all .8s;
+}
+
+.container{
+    position: relative;
+    height: 800px;
+    width: 1000px;
+    border: 2px solid red; 
+    margin:0 auto;
+}
+
+.message{
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    position:absolute;
+
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.el-1{
+    background-color: rgb(62,116,168);
+    left: 300px;
+    top: 200px;
+}
+.el-2{
+    background-color: rgb(253,253,0);
+    left: 300px;
+    top: 400px;
+}
+.el-3{
+    background-color: rgb(94,94,94);
+    right: 300px;
+    top: 200px;
+}
+.el-4{
+    background-color: rgb(179,131,131); 
+    right: 300px;
+    top: 400px;
+}
+
+.message:not(:hover) ~ .el-1{
+    transform: translateX(-200px) rotate(90deg);
+}
+.message:not(:hover) ~ .el-2{
+    transform: translateX(-200px) rotate(-90deg);
+}
+.message:not(:hover) ~ .el-3{
+    transform: translateX(200px) rotate(-90deg);
+}
+.message:not(:hover) ~ .el-4{
+    transform: translateX(200px) rotate(90deg);
+}
